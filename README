@@ -1,0 +1,31 @@
+$Id: README,v 1.4 2008/02/13 01:07:59 karl Exp $
+This is the README file for the gnustandards project.
+
+  Copyright (C) 2004, 2005, 2006, 2008 Free Software Foundation, Inc.
+
+  Copying and distribution of this file, with or without modification,
+  are permitted in any medium without royalty provided the copyright
+  notice and this notice are preserved.
+
+This hierarchy contains the canonical sources for the "GNU Coding
+Standards" and "Information for GNU Maintainers" documents.  All changes
+must be approved by rms.
+
+Formatted versions are on the GNU web site: http://www.gnu.org/prep/
+
+Copies of these sources are maintained in the gnulib project
+(http://savannah.gnu.org/projects/gnulib) for convenience of the
+maintainers who already check out gnulib.
+
+If you're interested in these, you might also be interested in the
+additional "Gnits" standards.  They are completely unofficial and no
+longer updated, but go into somewhat more detail in some areas.  They're
+available as part of the GNU Womb:
+http://savannah.gnu.org/cgi-bin/viewcvs/womb/gnits/ cvs
+-d:ext:anoncvs@cvs.gnu.org:/cvsroot/womb co gnits
+
+To update the manuals, see the work.m and work.s directories here.  Each
+has a GNUmakefile with assorted targets and comments.  They use the
+gendocs.sh script, which is in Texinfo CVS on savannah, which in turn
+needs a file gendocs_template, also in Texinfo CVS:
+http://cvs.savannah.gnu.org/viewcvs/texinfo/util/?root=texinfo

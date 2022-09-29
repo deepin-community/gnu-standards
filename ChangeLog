@@ -1,0 +1,652 @@
+2010-02-18  Karl Berry  <karl@gnu.org>
+
+	* make-stds.texi (Standard Targets) <do-install-info>: Avoid
+	absolute, DESTDIR-related, target name, which fails if the target
+	directory happens to contain spaces.  Hence avoid $@, which was
+	redundantly specified anyway.  Finally, only the install-info run
+	is POST_INSTALL, the INSTALL_DATA part is NORMAL_INSTALL.
+	Report from Aubrey Jaffer, follow-up from Ralf Wildenhues,
+	11 Feb 2010 07:29:15.
+
+	(Directory Variables): State that install dirs and their parents
+	should be created before being used.
+
+	(DESTDIR): Capitalize section name in the usual way.
+
+	(Standard Targets) <installdirs>: mkinstalldirs is
+	better found in Gnulib.
+
+2010-02-18  Thien-Thi Nguyen  <ttn@gnuvola.org>  (tiny change)
+
+	Insert space before open-paren in C code fragments.
+	* doc/standards.texi
+	(Conditional Compilation): Say "if (...)", not "if( ...)".
+	(Semantics): Say "fd = open (...)", not "fd = open(...)".
+
+2010-02-18  Thien-Thi Nguyen  <ttn@gnuvola.org>  (tiny change)
+
+	* doc/standards.texi (Change Log Concepts):
+	Move the "however, one line to describe change ok" from its
+	own paragraph (following another "however..." sentence, thus
+	losing the antecedent) into the paragraph where "need to
+	describe full purpose of changes" is first discouraged.
+	Also, expand the prepositional noun phrase to cover a
+	single change.
+
+2010-02-18  Thien-Thi Nguyen  <ttn@gnuvola.org>  (tiny change)
+
+	* doc/standards.texi (Change Log Concepts): Use three hyphens
+	for "emdash".
+
+2010-01-27  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Copyright Notices): Normalize whitespace;
+	clarify "Copyright" being in English and C-in-a-circle or (C) not
+	being a requirement.
+
+2010-01-24  Ralf Wildenhues  <Ralf.Wildenhues@gmx.de>
+
+	* doc/make-stds.texi (Makefile Basics): corrected to sed -f sedscript,
+	not sed -e.
+
+2010-01-05  Karl Berry  <karl@gnu.org>
+
+	* make-stds.texi (Standard Targets): Don't explicitly mention any 
+	compression formats other than gzip.
+
+2009-12-12  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Automated Upload Procedure): try to be more
+	explicit about the example gpg commands, etc.
+	Suggestion from Ward Vandewege.
+
+2009-12-11  Ralf Wildenhues  <Ralf.Wildenhues@gmx.de>
+
+	Do not recommend world-writable directories in package tarballs.
+	* standards.texi (Releases): change recommended directory
+	mode to 755, include justification and refer to original text;
+	following CVE-2009-4029.
+	Report by Jim Meyering.
+
+2009-11-20  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (Preface),
+	* maintain.texi (Preface): mention gnustandards-commit mailing list.
+
+2009-09-14  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (Configuration): Environment variables should be
+	supported for configure as well as options.
+
+2009-07-24  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Web Pages): reorganize into subnodes.
+	(Old Versions): mention savannah-announce mailing list.
+	(About This Document): mention fsfstatus url.
+	No substantive changes in all of that.
+
+2009-06-07  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (Man Pages): refer to the all-permissive license
+	in maintain.texi instead of quoting it.
+
+2009-04-29  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (License Notices for Other Files): second sentence
+	about no warranty, per legal advice.
+
+2009-04-16  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (Releases): COPYING.LESSER, not COPYING.LIB.
+	Report from Simon Ward, 15 Apr 2009 21:57:53.
+
+2009-03-12  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Announcements): suggestions for
+	announcement contents.
+
+2009-03-04  Karl Berry  <karl@gnu.org>
+
+	* gnu-oids.texi: allocate .6 to GNU Shishi for
+	Simon Josefsson.
+
+2009-02-06  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (--help): tweak punctuation of sample output.
+
+2009-02-05  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Automated Upload Registration): more hints
+	about how to use gpg.
+
+2009-01-26  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (--help): recommend including the package's home
+	page and gnu.org/gethelp.
+
+2009-01-18  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Standalone directives): clarify that `rmsymlink'
+	fails unless the symlink exists, but `symlink' overwrites an
+	existing symlink.  Information from Sergey Poznyakoff.
+
+2008-12-31  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (License Notices for Documentation): clarify that
+	long and/or FSF-published manuals should include the GPL.
+
+2008-11-14  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Automated Upload Procedure): mention that
+	gnupload can now delete files as well as upload them.
+
+2008-11-10  Karl Berry  <karl@gnu.org>
+
+	* fdl.texi: update to 1.3 file.  Missed this earlier.
+
+2008-11-08  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (License Notices): explicitly mention that there
+	is no need for a plain text version of the FDL, e.g., no COPYING.DOC.
+
+2008-11-07  Karl Berry  <karl@gnu.org>
+
+	* make-stds.texi (Utilities in Makefiles): add tr.
+	Request from Eric Blake, bug-standards 04 Nov 2008 06:21:05 (and ff).
+
+2008-11-06  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi, standards.texi, make-stds.texi: upgrade license
+	to FDL 1.3+, including example text in maintain.texi.
+
+2008-11-04  Karl Berry  <karl@gnu.org>
+
+	* gnu-oids.texi: correct comment; included in standards, not maintain.
+
+2008-10-31  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (OID Allocations): new node.
+	* gnu-oids.texi: new file with current allocations, from Werner Koch.
+
+2008-10-13  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Announcements): mention planet.gnu.org and
+	savannah news feeds.  Suggestion from Ralf Wildenhues.
+
+2008-08-04  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Automated Upload Procedure): mention gnupload and
+	ncftpput[-ftp] for doing the gnu.org uploads.
+
+2008-08-01  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi: mostly suggestions from dbe based on dubbing mail:
+	mention coding standards and mentors@gnu.org;
+	update accounts info url;
+	mention gnu.org/people/people.html;
+	more discussion of mailing lists;
+	Free Software Directory entries.
+
+2008-07-27  Karl Berry  <karl@tug.org>
+
+	* standards.texi (Configuration): make clear that this is the
+	specification and that autoconf/automake are not the required
+	implementation.
+
+2008-07-09  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Clean Ups): correct section title (Tips and
+	Conventions) in elisp reference.
+
+2008-06-10  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (Option Table) <--file>: -f is --file in sed, too.
+	<--reference>: touch -r is this, not --file.
+	Use @code{make} for consistency with other program names.
+	bug-standards mail from Iain Calder, 01 Jun 2008 05:23:10.
+
+2008-05-05  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (Source Language): mention GTK+ bindings in Guile.
+
+2008-04-25  Karl Berry  <karl@gnu.org>
+
+	* make-stds.texi (Standard Targets): ok to support other free
+	compression formats.
+
+	* maintain.texi (Free Software and Open Source): update url to
+	http://www.gnu.org/philosophy/open-source-misses-the-point.html.
+
+2008-04-08  Ralf Wildenhues  <Ralf.Wildenhues@gmx.de>
+	and Karl Berry  <karl@gnu.org>
+
+	* make-stds.texi (General Conventions for Makefiles): more notes
+	on portability.
+
+2008-03-30  Ralf Wildenhues  <Ralf.Wildenhues@gmx.de>
+
+	* standards.texi: Fix links to config and gnulib repos, add some
+	`@/' to url's.
+
+2008-03-21  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Copyright Notices): missing "of".
+
+2008-03-14  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Copyright Papers): discuss disclaim.translation
+	and the Translation Project.
+
+2008-02-24  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Automated Upload Registration): avoid double "also".
+
+2008-02-23  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (Configuration): support the options to set the
+	directory variables, such as --prefix and --exec-prefix.
+
+2008-02-14  Karl Berry  <karl@gnu.org>
+
+	* make-stds.texi (Utilities in Makefiles): Don't imply that gzip
+	is the only compression program that can be used in make dist.
+
+2008-02-11  Richard Stallman  <rms@gnu.org>
+
+	* maintain.texi (Copyright Papers): Distinguish personal disclaimers
+	from employer's disclaimers.
+
+2008-01-30  Richard Stallman  <rms@gnu.org>
+
+	* maintain.texi (License Notices for Documentation): new
+	Back-Cover Text.
+
+2008-01-19  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Hosting): subversions.gnu.org is now
+	savannah.gnu.org; recommend using ftp.gnu.org a little more strongly.
+	(Announcements): recommend using info-gnu more strongly.
+
+2008-01-17  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (GNU Free Documentation License): new node; change
+	license of document, after discussion with rms, Eben, and Brett.
+
+2008-01-05  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Automated Upload Registration): first create an
+	account at savannah.  (Requested by sysadmin.)
+
+2007-12-30  Karl Berry  <karl@gnu.org>
+
+	* (License Notices): move mention of licensing@gnu.org to a more
+	general place.
+	(License Notices for Documentation),
+	(Free Software and Open Source): consistently put punctuation
+	outside quotes (except when it's part of the quote).
+	(GNU and Linux): Typo.
+
+2007-12-30  Tim Retout  <diocles@gnu.org>
+
+        * maintain.texi (Legally Significant Changes): use
+        gender-neutral pronouns.
+
+2007-11-29  Karl Berry  <karl@gnu.org>
+
+	* make-stds.texi (Command Variables): allow (but do not require)
+	installing multiple files at once.  Request from Akim Demaille.
+
+2007-11-24  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Legal Matters): remove trailing whitespace.
+
+2007-11-14  Ward Vandewege  <ward@gnu.org>
+
+	* doc/maintain.texi (FTP Upload Directive File - v1.1):
+	Add example how to archive a directory.
+
+2007-11-04  Sergey Poznyakoff  <gray@gnu.org.ua>
+
+	* maintain.texi (Web Pages): Mention the --texi2html option
+	to gendocs.sh.
+
+2007-10-10  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi,
+	* standards.texi: Fix a few typos.
+
+2007-10-08  Richard Stallman  <rms@gnu.org>
+
+	* maintain.texi (Web Pages): GNU package web sites should run on
+	free software exclusively.
+	(Ethical and Philosophical Consideration): Modernize
+	the passage about patents.
+
+	* standards.texi: Clarify the issues of references to non-free
+	programs and documentation.
+
+2007-10-06  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Stepping Down),
+	(Canonical License Sources),
+	(Old Versions): Mention Git, and generalize mentions of source control.
+	Idea from: Benoit Sigoure, bug-gnulib mail 4 Oct 2007 18:47:44.
+
+2007-09-25  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Automated Upload Procedure): Incomplete uploaded
+	files now deleted after 24 hours; info from Ward Vandewege,
+	25 Sep 2007 15:20:53.
+
+2007-09-23  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (System Portability): Abbreviating Windows to
+	"un" seems like a typo.  Reported by John Darrington,
+	23 Sep 2007 03:32:24.
+
+2007-09-20  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (License Notices): Wrong @menu punctuation for Texinfo.
+
+2007-09-09  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (References): Missing word "to".
+
+2007-09-05  Karl Berry  <karl@gnu.org>
+
+	* make-stds.texi (Utilities in Makefiles): Add awk to allowed
+	utilities list.  Requested by Ralf Wildenhues.
+
+2007-08-18  Karl Berry  <karl@gnu.org>
+
+	* make-stds.texi (DESTDIR): Must be an absolute file name.
+	Requested by Ralf Wildenhues.
+
+2007-07-25  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (License Notices for Code): More punctuation fixes
+	from Eric Blake.
+
+2007-07-24  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (License Notices for Code): Sync wording with
+	gpl-3.0.texi.  Reported by Eric Blake.
+
+2007-07-22  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (all @menus): Consistently capitalize and punctuate.
+
+	* standards.texi (GNU Free Documentation License): Make @appendix,
+	replacing "Copying This Manual".  Reported by Paul Eggert.
+	* fdl.texi: Update to new version (without @node).
+
+2007-07-09  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (License Notices): Split up into new nodes:
+	  Canonical License Sources,
+	  License Notices for Code,
+	  License Notices for Documentation,
+	  License Notices for Other Files.
+	Also, update for GPLv3.
+	Also, clarify that the Cover Texts are only required for large
+	manuals and/or those that FSF publishes on paper.
+
+2007-07-07  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (License Notices, Proofreading): use ``...'''
+	instead of "...".  Double space where appropriate.
+
+2007-06-27  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (--version): use / for exceptions, make version
+	number location clearer.
+
+2007-06-26  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (--version, --help): new nodes, split from
+	Command-Line Interfaces.  Include table of license abbreviations
+	and new recommended --version output.
+
+	* maintain.texi (License Notices): new Back-Cover Text.
+
+2007-05-23  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Copying from Other Packages): mention writing
+	license statements when they were omitted by the original authors.
+
+2007-03-08  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Preface): We don't have or update
+	/gd/gnuorg/maintain.tar.gz any more, and it seems
+	unnecessary to reinstate it.  Reported by Thomas Schwinge,
+	ticket 330574.
+
+2007-01-22  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (References): Er, "free software", not "freely
+	available".
+
+2007-01-21  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (References): Update Java reference, add mplayer
+	issues.  Correct a -- to ---.
+
+	* maintain.texi (Ethical and Philosophical Consideration): GIF
+	patents have expired, so just mention the general principle.
+
+2006-12-05  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Web Pages): GIF patents expired, tweak wording.
+	Consistently use a single space after @node and @section.
+
+2006-11-15  Karl Berry  <karl@gnu.org>
+
+	* standards.texi: core -> memory, throughout.
+	(CPU Portability): show correct example of calling write
+	on a char value; thanks to Paul Eggert for the code.
+	Both of these suggestions from Eugene Y. Vasserman.
+
+2006-10-18  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Automated Upload Procedure): texinfo typo.
+
+2006-10-09  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Recording Contributors): typo.
+
+2006-04-23  Richard Stallman  <rms@gnu.org>
+
+	* maintain.texi (Recording Contributors): Explain updating AUTHORS
+		from change log.
+	(Copying from Other Packages): New node.
+
+2006-08-19  Ralf Wildenhues  <Ralf.Wildenhues@gmx.de>
+	and Bruno Haible  <bruno@clisp.org>
+
+	* make-stds.texi (menu): Adjust to changed node order.
+	(DESTDIR): This variable is not specified to the configure
+	script.
+
+	* standards.texi (Configuration): Document that configure
+	should accept arguments of the form `VARIABLE=VALUE' and why
+	this is preferable to environment variables.
+
+2006-08-14  Paul Eggert  <eggert@cs.ucla.edu>
+
+	* make-stds.texi, standards.texi: Update FDL version number from
+	1.1 to 1.2.
+
+2006-07-09  Karl Berry  <karl@gnu.org>
+
+	* make-stds.texi: attempt to clarify that [install-]
+	html/ps/pdf/dvi targets should exist, but might not do anything.
+	Suggestions from Eric Blake and Bruno Haible.
+
+2006-07-09  <Ralf.Wildenhues@gmx.de>
+
+	* maintain.texi, make-stds.texi, standards.texi: Fix some typos.
+
+2006-05-24  Bruno Haible  <bruno@clisp.org>
+
+	* standards.texi (Internationalization): Change the example with
+	plurals to use the ngettext function, and move it to the end. Add
+	a new example showing the need for entire sentences.
+
+2006-05-09  Karl Berry  <karl@gnu.org>
+
+	* make-stds.texi (DESTDIR): new node, moving text.
+	(Directory variables): mention that not all variables might be
+	implemented.
+
+2006-04-23  Richard Stallman  <rms@gnu.org>
+
+	* standards.texi (GNU Manuals): Document that we reject the
+	Unix convention of writing `()' after function names.
+	Say put basic topics first.  Clarify.
+
+2006-04-09  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (Formatting Your Source Code): mislabeled
+	traditional C example as Standard C.  From Paul E.
+
+	* standards.texi: use @/ in url's to avoid some overfull lines.
+
+2006-04-06  Ralf Wildenhues  <Ralf.Wildenhues@gmx.de>
+
+	* make-stds.texi: Bump copyright year.
+	(Command Variables, Directory Variables): Fix spelling
+	`filesystem' -> `file system'.
+
+2006-03-22  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (License Notices): the FDL is 1.2 now, not 1.1.
+	Also remove trailing whitespace.
+	From Paul Eggert.
+
+2006-03-10  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (License Notices): there is no (b), should be (a).
+	From Paul Eggert.
+	(Legal Matters): the copyright request forms are now in gnulib as well.
+
+2006-02-13  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (Command-Line Interfaces): link to Copyright
+	Notices in maintain.texi; suggestion from Eli.
+
+2006-02-08  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (Non-GNU Standards): new section.
+
+2006-01-09  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (Releases): mention
+	http://www.gnu.org/philosophy/free-doc.html.  Suggested by
+	Alfred Szmidt.
+
+2006-01-01  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Copyright Notices): keep gnulib files as they
+	are; more explanatory description (from Bruno) about the new rule.
+
+2005-12-25  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (Formatting): column one, not zero, per elsewhere
+	in the doc.  From Kyle <mackyle@gmail.com>, 15 Dec 2005 15:50:04 -0800.
+	(Quote Characters): ASCII apparently considered ` an actual
+	left quote, and it got messed up later.
+
+	* maintain.texi (Copyright Notices): update all files at once;
+	copyright notices may be split over several lines.
+
+2005-12-06  Karl Berry  <karl@gnu.org>
+
+	* maintain.texi (Copyright Notices): new, simpler rules,
+	from rms and lawyers.
+
+2005-10-07  Paul Eggert  <eggert@cs.ucla.edu>
+
+	* standards.texi (CPU Portability): Don't mention just IA-64, as
+	the same problem occurs on AMD64 and EM64T as well.  Just say
+	"64-bit programs on Microsoft Windows" so that we needn't track
+	Microsoft's releases so closely.
+
+2005-08-18  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (Character set): new section, preferring ASCII.
+	(Quote characters): new section, preferring `...' (despite
+	standards) in the C locale.
+
+	* standards.texi (Configuration): New url for config.guess and
+	config.sub.
+
+	* standards.texi (Comments): Mention that the program comment
+	should be in the file with the "main" function of the program.
+
+2005-06-01  Karl Berry  <karl@gnu.org>
+
+	* standards.texi: various typos and corrections reported by
+	Ming Kin Lai, 24 May 2005 00:38:00 -0700.
+
+2005-02-13  Karl Berry  <karl@gnu.org>
+
+	* make-stds.texi (Directory Variables): clarify descriptions for
+	libexecdir, datarootdir, and datadir.  Thanks to Alexandre and
+	Alfred Szmidt.
+
+2005-01-27  Paul Eggert  <eggert@cs.ucla.edu>
+
+	* make-stds.texi: spurious @c in copyright statement.
+
+2005-01-04  Alexandre Duret-Lutz  <adl@gnu.org>
+
+	* maintain.texi (License Notices): Allow all-permissive license
+	for third-party Autoconf macros.
+
+2005-01-04  Richard Stallman  <rms@gnu.org>
+
+	* maintain.texi (Legal Matters): timing info.
+
+2005-01-01  Alexandre Duret-Lutz  <adl@gnu.org>
+
+	* make-stds.texi (Install Command Categories): Correct the
+	pre-install.awk example.  `make -s' needed, typos in awk script.
+
+2004-12-30  Paul Eggert  <eggert@twinsun.com>
+
+	* standards.texi (CPU Portability): update for modern machines,
+	especially varargs example.
+
+2004-12-06  Alexandre Duret-Lutz  <adl@src.lip6.fr>
+
+	* make-stds.texi (Standard Targets): let clean targets
+	remove anything that's normally installed.
+
+2004-12-03  Karl Berry  <karl@gnu.org>
+
+	* make-stds.texi (Command Line Interfaces): --machine is used in
+	uname.  Reported to gnu@gnu.org.
+
+2004-11-29  Karl Berry  <karl@gnu.org>
+
+	* standards.texi (Man Pages): use all-permissive license.
+	(Source Language): typo - language not languge.
+
+	* make-stds.texi (Directory Variables) <docdir, htmldir, dvidir,
+		pdfdir, psdir>: new variables.
+	{datadir}: spelling error in description.
+	(Standard Targets) <install-html, install-dvi, install-pdf,
+		install-ps>: new targets.
+	Thanks to Alexandre Duret-Lutz, Akim Demaille, and Bruno Haible
+	for extensive comments on this text.
+
+	* maintain.texi (Automated Upload Procedure): get msg on
+		successful upload, too.
+	(Copyright Papers): typo - missing verb.
+
+
+Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
