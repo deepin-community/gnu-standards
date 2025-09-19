@@ -8,7 +8,12 @@
 
 DOCUMENTS = standards.texi maintain.texi
 
+# Ensure texlive respects SOURCE_DATE_EPOCH
+export FORCE_SOURCE_DATE=1
+
 build: build-stamp
+build-arch: build
+build-indep: build
 build-stamp:
 	dh_testdir
 	for d in $(DOCUMENTS); do					\
