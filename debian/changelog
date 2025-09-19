@@ -1,3 +1,9 @@
+gnu-standards (2010.03.11-1.1deepin1) unstable; urgency=medium
+
+  * Update debhelper compat level to 13
+
+ -- sisungo <sisungo@icloud.com>  Fri, 19 Sep 2025 10:31:24 +0800
+
 gnu-standards (2010.03.11-1.1) unstable; urgency=medium
 
   * Non-maintainer upload.
